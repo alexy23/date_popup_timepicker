@@ -43,12 +43,6 @@ class TimePickerWidget extends DateTimeWidgetBase {
       'showLeadingZero' => TRUE,
       // Define whether or not to show a leading zero for minutes < 10.
       'showMinutesLeadingZero' => TRUE,
-      // Define whether or not to show AM/PM with selected time.
-      'showPeriod' => FALSE,
-      // Define if the AM/PM labels on the left are displayed.
-      'showPeriodLabels' => TRUE,
-      // The character to use to separate the time from the time period.
-      'periodSeparator' => ' ',
       // Define an alternate input to parse selected time to.
       'altField' => '#alternate_input',
       // Used as default time when input field is empty or for inline
@@ -164,24 +158,6 @@ class TimePickerWidget extends DateTimeWidgetBase {
       '#title' => t('Show minutes leading zero'),
       '#description' => t('Define whether or not to show a leading zero for minutes < 10.'),
       '#default_value' => $options['showMinutesLeadingZero'],
-    );
-    $element['showPeriod'] = array(
-      '#type' => 'checkbox',
-      '#title' => t('Show period'),
-      '#description' => t('Define whether or not to show AM/PM with selected time.'),
-      '#default_value' => $options['showPeriod'],
-    );
-    $element['showPeriodLabels'] = array(
-      '#type' => 'checkbox',
-      '#title' => t('Show period labels'),
-      '#description' => t('Define if the AM/PM labels on the left are displayed.'),
-      '#default_value' => $options['showPeriodLabels'],
-    );
-    $element['periodSeparator'] = array(
-      '#type' => 'textfield',
-      '#title' => t('Period separator'),
-      '#description' => t('The character to use to separate the time from the time period.'),
-      '#default_value' => $options['periodSeparator'],
     );
     $element['defaultTime'] = array(
       '#type' => 'textfield',
@@ -446,8 +422,6 @@ class TimePickerWidget extends DateTimeWidgetBase {
         'boolean' => array(
           'showLeadingZero',
           'showMinutesLeadingZero',
-          'showPeriod',
-          'showPeriodLabels',
           'showHours',
           'showMinutes',
           'showCloseButton',
@@ -465,7 +439,6 @@ class TimePickerWidget extends DateTimeWidgetBase {
           'ends',
         ),
         'no_filtering' => array(
-          'periodSeparator',
         ),
       );
       // Callback for the array_walk_recursive().
@@ -511,8 +484,6 @@ class TimePickerWidget extends DateTimeWidgetBase {
     $boolean = array(
       'showLeadingZero',
       'showMinutesLeadingZero',
-      'showPeriod',
-      'showPeriodLabels',
       'showHours',
       'showMinutes',
       'showCloseButton',

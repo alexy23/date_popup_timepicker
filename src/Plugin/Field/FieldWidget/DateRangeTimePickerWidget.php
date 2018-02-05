@@ -62,24 +62,6 @@ class DateRangeTimePickerWidget extends DateRangeWidgetBase {
       '#description' => t('Define whether or not to show a leading zero for minutes < 10.'),
       '#default_value' => $options['showMinutesLeadingZero'],
     );
-    $element['showPeriod'] = array(
-      '#type' => 'checkbox',
-      '#title' => t('Show period'),
-      '#description' => t('Define whether or not to show AM/PM with selected time.'),
-      '#default_value' => $options['showPeriod'],
-    );
-    $element['showPeriodLabels'] = array(
-      '#type' => 'checkbox',
-      '#title' => t('Show period labels'),
-      '#description' => t('Define if the AM/PM labels on the left are displayed.'),
-      '#default_value' => $options['showPeriodLabels'],
-    );
-    $element['periodSeparator'] = array(
-      '#type' => 'textfield',
-      '#title' => t('Period separator'),
-      '#description' => t('The character to use to separate the time from the time period.'),
-      '#default_value' => $options['periodSeparator'],
-    );
     $element['defaultTime'] = array(
       '#type' => 'textfield',
       '#title' => t('Default time'),
